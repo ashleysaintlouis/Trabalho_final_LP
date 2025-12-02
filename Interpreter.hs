@@ -10,8 +10,13 @@ isValue :: Expr -> Bool
 isValue BTrue = True
 isValue BFalse = True
 isValue (Num _) = True
+<<<<<<< HEAD
 isValue (Dbl _) = True       
 isValue (Str _) = True       
+=======
+isValue (Dbl _) = True        -- NOVO: Double é valor
+isValue (Str _) = True        -- NOVO: String é valor
+>>>>>>> cde6c57157cf259fca16daa19ab765e3a055c7ee
 isValue (Lam _ _ _) = True
 isValue (List []) = True
 isValue (List (x:xs)) = isValue x && isValue (List xs)
@@ -23,8 +28,13 @@ isValue _ = False
 subst :: String -> Expr -> Expr -> Expr
 subst x s y@(Var v) = if x == v then s else y
 subst x s (Num n) = Num n
+<<<<<<< HEAD
 subst x s (Dbl n) = Dbl n    
 subst x s (Str n) = Str n    
+=======
+subst x s (Dbl n) = Dbl n     -- NOVO
+subst x s (Str n) = Str n     -- NOVO
+>>>>>>> cde6c57157cf259fca16daa19ab765e3a055c7ee
 subst x s BTrue = BTrue
 subst x s BFalse = BFalse
 subst x s (App t1 t2) = App (subst x s t1) (subst x s t2)
@@ -34,8 +44,13 @@ subst x s (Times t1 t2) = Times (subst x s t1) (subst x s t2)
 subst x s (And t1 t2) = And (subst x s t1) (subst x s t2)
 subst x s (Or t1 t2) = Or (subst x s t1) (subst x s t2)
 subst x s (Eql t1 t2) = Eql (subst x s t1) (subst x s t2)
+<<<<<<< HEAD
 subst x s (Gt t1 t2)  = Gt (subst x s t1) (subst x s t2) 
 subst x s (Lt t1 t2)  = Lt (subst x s t1) (subst x s t2) 
+=======
+subst x s (Gt t1 t2)  = Gt (subst x s t1) (subst x s t2) -- NOVO
+subst x s (Lt t1 t2)  = Lt (subst x s t1) (subst x s t2) -- NOVO
+>>>>>>> cde6c57157cf259fca16daa19ab765e3a055c7ee
 subst x s (Paren e) = Paren (subst x s e)
 subst x s (If e1 e2 e3) = If (subst x s e1) (subst x s e2) (subst x s e3)
 subst x s lam@(Lam y tp t1) = if x == y then lam else Lam y tp (subst x s t1)

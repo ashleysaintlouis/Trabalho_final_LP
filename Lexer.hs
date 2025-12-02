@@ -127,7 +127,11 @@ lexString cs =
     let (str, rest) = span (/= '"') cs
     in if null rest 
        then error "Lexical error: string sem fim"
+<<<<<<< HEAD
        else TokenStr str : lexer (drop 1 rest) 
+=======
+       else TokenStr str : lexer (drop 1 rest) -- CORRIGIDO: drop 1 em vez de tail
+>>>>>>> cde6c57157cf259fca16daa19ab765e3a055c7ee
 
 lexNum cs = 
     let (digits, rest) = span isDigit cs

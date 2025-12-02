@@ -1,0 +1,8 @@
+# Arquivos gerados pelo GHC
+*.hi
+*.o
+*.exe
+
+# Arquivos gerados pelo Happy
+Parser.hs
+Lexer.hs
