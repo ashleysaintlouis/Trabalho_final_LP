@@ -36,7 +36,7 @@ subst x s (Times t1 t2) = Times (subst x s t1) (subst x s t2)
 subst x s (And t1 t2) = And (subst x s t1) (subst x s t2)
 subst x s (Or t1 t2) = Or (subst x s t1) (subst x s t2)
 subst x s (Eql t1 t2) = Eql (subst x s t1) (subst x s t2)
-<<<<<<< HEAD
+
 subst x s (Gt t1 t2)  = Gt (subst x s t1) (subst x s t2) 
 subst x s (Lt t1 t2)  = Lt (subst x s t1) (subst x s t2) 
 
